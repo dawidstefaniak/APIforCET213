@@ -15,6 +15,7 @@ restapi.get('/graffiti', function(req,res){
         res.jsonp(rows);
     });
 });
+
 restapi.post('/graffiti',function(req,res){
     var location = req.body.location;
     var description = req.body.description;
@@ -22,5 +23,6 @@ restapi.post('/graffiti',function(req,res){
     db.run("INSERT INTO graffiti (location,description,date) VALUES (${location},${description},${date})", function(err,rows){
         res.jsonp("hi");
     });
-})
+});
+
 restapi.listen(3000);
